@@ -1,0 +1,16 @@
+#!/usr/bin/php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Commands\ImportCommand;
+
+if (empty($argv[1])) {
+    echo "Please specify a source name\n";
+} else {
+    $cmd = new ImportCommand();
+
+    $cmd->execute($argv[1]);
+}
+
+
